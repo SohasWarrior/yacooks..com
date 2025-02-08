@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YA COOKS - Online Pancake Delivery Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">  <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Use Poppins for main text */
+            margin: 0;
+            background: linear-gradient(to bottom right, #ffe6f2, #fff0f5); /* Light, appetizing background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive; /* Use Pacifico for the logo */
+            color: #e91e63; /* Eye-catching pink */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-button, .email-button , .or {
+            background-color: #ff9800; /* Orange - appetizing and energetic */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700; /* Bold text */
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: pulse 1.5s infinite;
+            margin: 10px 0; /* Space between buttons */
+        }
+
+        .cta-button:hover, .email-button:hover , .or:hover{
+            transform: scale(1.05);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        #phone-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #phone-popup p {
+            font-size: 20px;
+            color: #ff9800; /* Match button color */
+            text-align: center;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>YA COOKS - Online Pancake Delivery Service</h1>
+    </header>
+
+    <main>
+        <button class="cta-button" onclick="showPhonePopup()">Call Now To Place An Order</button>
+        <button class="or">Or</button>
+        <button class="email-button" onclick="openEmail()">Email Us</button>
+
+        <div id="phone-popup">
+            <span class="close-button" onclick="hidePhonePopup()">&times;</span>
+            <p>Call Us: +8801612233609</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Y.A COOKS</p>
+    </footer>
+
+    <script>
+        function showPhonePopup() {
+            document.getElementById("phone-popup").style.display = "block";
+        }
+
+        function hidePhonePopup() {
+            document.getElementById("phone-popup").style.display = "none";
+        }
+
+        function openEmail() {
+            window.open('https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMSqXcRrnZCThsKZztRWLvCtXwFZNzRxHjzwjXlLJQRgwLsKSxhThLnZqHtqRkKgGNWKQKg', '_blank');
+        }
+    </script>
+
+</body>
+</html>
